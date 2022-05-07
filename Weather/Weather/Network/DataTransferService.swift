@@ -9,7 +9,7 @@ import Foundation
 
 enum DataTransferServiceError: Error {
     case noResponse
-    case parsingError(Error)
+    case parsing(Error)
     case networkFailure(NetworkError)
     case resolvedNetworkFailure(Error)
 }
@@ -54,7 +54,7 @@ final class DefaultDataTransferService: DataTransferService {
             let result: T = try decoder.decode(T.self, from: data)
             return .success(result)
         } catch {
-            return .failure(.parsingError(error))
+            return .failure(.parsing(error))
         }
     }
     

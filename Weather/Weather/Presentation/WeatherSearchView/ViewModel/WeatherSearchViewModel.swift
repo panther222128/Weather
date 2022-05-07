@@ -46,6 +46,8 @@ final class DefaultWeatherSearchViewModel: WeatherSearchViewModel {
                 self.searchResultsStorage.value = data
                 completion(.success(data))
             case .failure(let error):
+                self.isError.value = true
+                self.error.value = error
                 completion(.failure(error))
             }
         }
@@ -57,7 +59,8 @@ final class DefaultWeatherSearchViewModel: WeatherSearchViewModel {
             case .success(let data):
                 self.searchResultsStorage.value = data
             case .failure(let error):
-                print(error)
+                self.isError.value = true
+                self.error.value = error
             }
         }
     }
