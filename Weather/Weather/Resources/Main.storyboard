@@ -11,7 +11,7 @@
         <!--Weather Search View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="WeatherSearchViewControllerID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="WeatherSearchViewController" customModule="Coordinator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WeatherSearchViewControllerID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="WeatherSearchViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,7 +24,7 @@
                                 <rect key="frame" x="20" y="95" width="374" height="767"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="WeatherSearchResultTableViewCellID" rowHeight="80" id="Dmf-Lq-st9" customClass="WeatherSearchResultTableViewCell" customModule="Coordinator" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="WeatherSearchResultTableViewCellID" rowHeight="80" id="Dmf-Lq-st9" customClass="WeatherSearchResultTableViewCell" customModule="Weather" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="374" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Dmf-Lq-st9" id="SyN-W1-GkJ">
@@ -77,18 +77,18 @@
         <!--Location Weather View Controller-->
         <scene sceneID="M5X-ay-AYO">
             <objects>
-                <viewController storyboardIdentifier="LocationWeatherViewControllerID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HMD-yJ-MFn" customClass="LocationWeatherViewController" customModule="Coordinator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LocationWeatherViewControllerID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HMD-yJ-MFn" customClass="LocationWeatherViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HAe-qi-401">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SxH-ih-aLo" customClass="WeatherInformationView" customModule="Coordinator" customModuleProvider="target">
-                                <rect key="frame" x="20" y="53" width="374" height="374"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CIc-Cn-gCl" customClass="WeatherInformationView" customModule="Weather" customModuleProvider="target">
+                                <rect key="frame" x="20" y="488" width="374" height="374"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CIc-Cn-gCl" customClass="WeatherInformationView" customModule="Coordinator" customModuleProvider="target">
-                                <rect key="frame" x="20" y="435" width="374" height="374"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SxH-ih-aLo" customClass="WeatherInformationView" customModule="Weather" customModuleProvider="target">
+                                <rect key="frame" x="20" y="106" width="374" height="374"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
