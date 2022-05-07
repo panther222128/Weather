@@ -41,14 +41,12 @@ class LocationWeatherViewController: UIViewController {
     
     private func bind() {
         self.locationWeatherViewModel.locationWeathersStorage.bind { [weak self] in
-            self?.todayWeatherInformationView.isHidden = true
-            self?.tomorrowWeatherInformationView.isHidden = true
+            self?.hideViews()
             guard let self = self else { return }
             guard let data = $0 else { return }
             self.configure(locationWeathers: data)
             self.dataLoadingActivityIndicator.stopAnimating()
-            self.todayWeatherInformationView.isHidden = false
-            self.tomorrowWeatherInformationView.isHidden = false
+            self.presentView()
         }
         self.locationWeatherViewModel.isError.bind { [weak self] isError in
             guard let self = self else { return }
@@ -82,6 +80,20 @@ extension LocationWeatherViewController {
         self.tomorrowWeatherInformationView.humidityLabel.text = "\(locationWeathers[1].humidity)%"
         let tomorrowWeatherImageUrlString = ImageHotlink.hotlink + locationWeathers[1].weatherStateAbbreviation + ".png"
         self.tomorrowWeatherInformationView.weatherStateImageView.loadImageUsingUrlString(urlString: tomorrowWeatherImageUrlString)
+    }
+    
+}
+
+extension LocationWeatherViewController {
+    
+    private func hideViews() {
+        self.todayWeatherInformationView.isHidden = true
+        self.tomorrowWeatherInformationView.isHidden = true
+    }
+    
+    private func presentView() {
+        self.todayWeatherInformationView.isHidden = false
+        self.tomorrowWeatherInformationView.isHidden = false
     }
     
 }
