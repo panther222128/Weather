@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Weather Search View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="WeatherSearchViewControllerID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="WeatherSearchViewController" customModule="Coordinator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="XGL-Ag-WQv">
+                                <rect key="frame" x="20" y="44" width="374" height="51"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="7bp-0d-SHz">
+                                <rect key="frame" x="20" y="95" width="374" height="767"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="WeatherSearchResultTableViewCellID" rowHeight="80" id="Dmf-Lq-st9" customClass="WeatherSearchResultTableViewCell" customModule="Coordinator" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="374" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Dmf-Lq-st9" id="SyN-W1-GkJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yS7-Qo-a5I">
+                                                    <rect key="frame" x="20" y="29" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="yS7-Qo-a5I" firstAttribute="top" secondItem="SyN-W1-GkJ" secondAttribute="top" constant="29" id="1RY-ph-q1X"/>
+                                                <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="yS7-Qo-a5I" secondAttribute="trailing" constant="312" id="evx-n1-Mek"/>
+                                                <constraint firstItem="yS7-Qo-a5I" firstAttribute="leading" secondItem="SyN-W1-GkJ" secondAttribute="leading" constant="20" symbolic="YES" id="oF3-Nt-9H1"/>
+                                                <constraint firstAttribute="bottom" secondItem="yS7-Qo-a5I" secondAttribute="bottom" constant="30" id="tzU-c2-c1Z"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <connections>
+                                            <outlet property="weatherSearchResultLabel" destination="yS7-Qo-a5I" id="a1m-vF-Zjg"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="XGL-Ag-WQv" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Dcz-nZ-hSG"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="7bp-0d-SHz" secondAttribute="trailing" constant="20" id="LtL-Xk-AkU"/>
+                            <constraint firstItem="XGL-Ag-WQv" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="SMK-uq-Wkc"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="7bp-0d-SHz" secondAttribute="bottom" id="oQQ-Sb-IMg"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="XGL-Ag-WQv" secondAttribute="trailing" constant="20" id="t83-d7-M8t"/>
+                            <constraint firstItem="7bp-0d-SHz" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="vnN-fh-7Mb"/>
+                            <constraint firstItem="7bp-0d-SHz" firstAttribute="top" secondItem="XGL-Ag-WQv" secondAttribute="bottom" id="zDH-so-HYa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="weatherSearchBar" destination="XGL-Ag-WQv" id="sle-JN-rDF"/>
+                        <outlet property="weatherSearchResultsTableView" destination="7bp-0d-SHz" id="EfO-rX-EiB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="83.705357142857139"/>
+        </scene>
+        <!--Location Weather View Controller-->
+        <scene sceneID="M5X-ay-AYO">
+            <objects>
+                <viewController storyboardIdentifier="LocationWeatherViewControllerID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HMD-yJ-MFn" customClass="LocationWeatherViewController" customModule="Coordinator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HAe-qi-401">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SxH-ih-aLo" customClass="WeatherInformationView" customModule="Coordinator" customModuleProvider="target">
+                                <rect key="frame" x="20" y="53" width="374" height="374"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CIc-Cn-gCl" customClass="WeatherInformationView" customModule="Coordinator" customModuleProvider="target">
+                                <rect key="frame" x="20" y="435" width="374" height="374"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Z3S-P2-l4n"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="todayWeatherInformationView" destination="SxH-ih-aLo" id="DGM-Ga-1Iu"/>
+                        <outlet property="tomorrowWeatherInformationView" destination="CIc-Cn-gCl" id="k0s-f0-NHa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yB3-4y-zA3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="873.91304347826099" y="84.375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
