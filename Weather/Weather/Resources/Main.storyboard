@@ -82,19 +82,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CIc-Cn-gCl" customClass="WeatherInformationView" customModule="Weather" customModuleProvider="target">
-                                <rect key="frame" x="20" y="488" width="374" height="374"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SxH-ih-aLo" customClass="WeatherInformationView" customModule="Weather" customModuleProvider="target">
-                                <rect key="frame" x="20" y="106" width="374" height="374"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="oio-zR-TAa">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SxH-ih-aLo" customClass="WeatherInformationView" customModule="Weather" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="399"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CIc-Cn-gCl" customClass="WeatherInformationView" customModule="Weather" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="419" width="414" height="399"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="CIc-Cn-gCl" firstAttribute="width" secondItem="oio-zR-TAa" secondAttribute="width" id="6oO-B5-3sl"/>
+                                    <constraint firstItem="SxH-ih-aLo" firstAttribute="width" secondItem="oio-zR-TAa" secondAttribute="width" id="Gtg-ZW-2nL"/>
+                                    <constraint firstItem="CIc-Cn-gCl" firstAttribute="height" secondItem="SxH-ih-aLo" secondAttribute="height" id="Jqj-Fp-85T"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Z3S-P2-l4n"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="oio-zR-TAa" firstAttribute="top" secondItem="Z3S-P2-l4n" secondAttribute="top" id="AQ4-Jn-Lwj"/>
+                            <constraint firstItem="Z3S-P2-l4n" firstAttribute="trailing" secondItem="oio-zR-TAa" secondAttribute="trailing" id="cHI-iy-x3O"/>
+                            <constraint firstItem="oio-zR-TAa" firstAttribute="leading" secondItem="Z3S-P2-l4n" secondAttribute="leading" id="caP-Wu-wd8"/>
+                            <constraint firstItem="Z3S-P2-l4n" firstAttribute="bottom" secondItem="oio-zR-TAa" secondAttribute="bottom" id="wkX-FW-lmg"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="todayWeatherInformationView" destination="SxH-ih-aLo" id="DGM-Ga-1Iu"/>
