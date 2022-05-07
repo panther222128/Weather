@@ -20,8 +20,8 @@ final class DefaultWeatherRepository: WeatherRepository {
         self.dataTransferService.request(with: apiEndpoint, dataType: [LocationSearchResultResponseDTO].self) { result in
             switch result {
             case .success(let data):
-                let transformedToDomain = data.map( { $0.convertToDomain() } )
-                completion(.success(transformedToDomain))
+                let convertedToDomain = data.map( { $0.convertToDomain() } )
+                completion(.success(convertedToDomain))
             case .failure(let error):
                 completion(.failure(error))
             }
@@ -33,8 +33,8 @@ final class DefaultWeatherRepository: WeatherRepository {
         self.dataTransferService.request(with: apiEndpoint, dataType: LocationWeatherResponseDTOs.self) { result in
             switch result {
             case .success(let data):
-                let transformedToDomain = data.convertToDomain()
-                completion(.success(transformedToDomain))
+                let convertedToDomain = data.convertToDomain()
+                completion(.success(convertedToDomain))
             case .failure(let error):
                 completion(.failure(error))
             }
