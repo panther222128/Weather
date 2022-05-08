@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class DefaultWeatherRepository: WeatherRepository {
+final class DefaultWeatherSearchRepository: WeatherRepository {
     
     private let dataTransferService: DataTransferService
     

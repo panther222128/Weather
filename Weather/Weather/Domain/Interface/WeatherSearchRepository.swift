@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol WeatherRepository {
-    func fetchLocationSearchResult(with searchKeyword: String, completion: @escaping (Result<[LocationSearchResult], Error>) -> Void)
+protocol WeatherSearchRepository {
+    func fetchWeatherSearchResult(with searchKeyword: String, completion: @escaping (Result<[LocationSearchResult], Error>) -> Void)
     func fetchLocationWeather(with woeid: Int, completion: @escaping (Result<LocationWeathers, Error>) -> Void)
 }
