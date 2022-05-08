@@ -79,8 +79,10 @@ extension WeatherSearchViewController: UISearchBarDelegate {
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         guard let searchText = searchBar.text, !searchText.isEmpty else { return }
-        self.weatherSearchViewModel.didSearch(using: searchText)
-        self.bind()
+        DispatchQueue.main.async {
+            self.weatherSearchViewModel.didSearch(using: searchText)
+            self.bind()
+        }
     }
 
 }
