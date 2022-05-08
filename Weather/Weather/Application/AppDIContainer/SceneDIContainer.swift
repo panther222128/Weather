@@ -25,12 +25,12 @@ final class SceneDIContainer: ViewFlowCoordinatorDependencies {
     
     // MARK: - WeatherSearch
     
-    private func makeWeatherRepository() -> WeatherRepository {
-        return DefaultWeatherRepository(dataTransferService: self.dependencies.apiDataTransferService)
+    private func makeWeatherSearchRepository() -> WeatherSearchRepository {
+        return DefaultWeatherSearchRepository(dataTransferService: self.dependencies.apiDataTransferService)
     }
     
     private func makeWeatherSearchUseCase() -> WeatherSearchUseCase {
-        return DefaultWeatherSearchUseCase(weatherRepository: self.makeWeatherRepository())
+        return DefaultWeatherSearchUseCase(weatherSearchRepository: self.makeWeatherSearchRepository())
     }
     
     private func makeWeatherSearchViewModel(action: WeatherSearchViewModelAction) -> WeatherSearchViewModel {
@@ -43,8 +43,12 @@ final class SceneDIContainer: ViewFlowCoordinatorDependencies {
     
     // MARK: - LocationWeather
     
+    private func makeLocationWeatherRepository() -> LocationWeatherRepository {
+        return DefaultLocationWeatherRepository(dataTransferService: self.dependencies.apiDataTransferService)
+    }
+    
     private func makeLocationWeatherUseCase() -> LocationWeatherUseCase {
-        return DefaultLocationWeatherUseCase(weatherRepository: self.makeWeatherRepository())
+        return DefaultLocationWeatherUseCase(locationWeatherRepository: self.makeLocationWeatherRepository())
     }
     
     private func makeLocationWeatherViewModel(woeid: Int) -> LocationWeatherViewModel {

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WeatherSearchResultTableViewCell: UITableViewCell {
+final class WeatherSearchResultTableViewCell: UITableViewCell {
     
     @IBOutlet weak var weatherSearchResultLabel: UILabel!
     

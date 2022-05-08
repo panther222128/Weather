@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LocationWeatherViewController: UIViewController {
+final class LocationWeatherViewController: UIViewController {
     
     @IBOutlet weak var todayWeatherInformationView: WeatherInformationView!
     @IBOutlet weak var tomorrowWeatherInformationView: WeatherInformationView!

@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+protocol LocationWeatherRepository {
+    func fetchLocationWeather(with woeid: Int, completion: @escaping (Result<LocationWeathers, Error>) -> Void)
+}

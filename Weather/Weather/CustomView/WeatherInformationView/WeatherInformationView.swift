@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WeatherInformationView: UIView {
+final class WeatherInformationView: UIView {
 
     @IBOutlet weak var dateTitleLabel: UILabel!
     @IBOutlet weak var weatherStateImageView: CustomImageView!

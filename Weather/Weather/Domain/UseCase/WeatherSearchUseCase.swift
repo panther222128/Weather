@@ -13,14 +13,14 @@ protocol WeatherSearchUseCase {
 
 final class DefaultWeatherSearchUseCase: WeatherSearchUseCase {
     
-    private let weatherRepository: WeatherRepository
+    private let weatherSearchRepository: WeatherSearchRepository
     
-    init(weatherRepository: WeatherRepository) {
-        self.weatherRepository = weatherRepository
+    init(weatherSearchRepository: WeatherSearchRepository) {
+        self.weatherSearchRepository = weatherSearchRepository
     }
     
     func excuteSearch(with searchKeyword: String, completion: @escaping (Result<[LocationSearchResult], Error>) -> Void) {
-        self.weatherRepository.fetchLocationSearchResult(with: searchKeyword) { result in
+        self.weatherSearchRepository.fetchWeatherSearchResult(with: searchKeyword) { result in
             switch result {
             case .success(let data):
                 completion(.success(data))

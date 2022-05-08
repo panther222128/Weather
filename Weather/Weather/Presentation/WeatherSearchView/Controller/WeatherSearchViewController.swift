@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WeatherSearchViewController: UIViewController {
+final class WeatherSearchViewController: UIViewController {
 
     @IBOutlet weak var weatherSearchBar: UISearchBar!
     @IBOutlet weak var weatherSearchResultsTableView: UITableView!

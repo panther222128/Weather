@@ -13,14 +13,14 @@ protocol LocationWeatherUseCase {
 
 final class DefaultLocationWeatherUseCase: LocationWeatherUseCase {
     
-    private let weatherRepository: WeatherRepository
+    private let locationWeatherRepository: LocationWeatherRepository
     
-    init(weatherRepository: WeatherRepository) {
-        self.weatherRepository = weatherRepository
+    init(locationWeatherRepository: LocationWeatherRepository) {
+        self.locationWeatherRepository = locationWeatherRepository
     }
     
     func excuteFetchWeather(with woeid: Int, completion: @escaping (Result<LocationWeathers, Error>) -> Void) {
-        self.weatherRepository.fetchLocationWeather(with: woeid) { result in
+        self.locationWeatherRepository.fetchLocationWeather(with: woeid) { result in
             switch result {
             case .success(let data):
                 completion(.success(data))
