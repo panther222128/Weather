@@ -46,7 +46,7 @@ final class LocationWeatherViewController: UIViewController {
             guard let data = $0 else { return }
             self.configure(locationWeathers: data)
             self.dataLoadingActivityIndicator.stopAnimating()
-            self.presentView()
+            self.presentViews()
         }
         self.locationWeatherViewModel.isError.bind { [weak self] isError in
             guard let self = self else { return }
@@ -91,7 +91,7 @@ extension LocationWeatherViewController {
         self.tomorrowWeatherInformationView.isHidden = true
     }
     
-    private func presentView() {
+    private func presentViews() {
         self.todayWeatherInformationView.isHidden = false
         self.tomorrowWeatherInformationView.isHidden = false
     }

@@ -7,12 +7,6 @@
 
 import Foundation
 
-struct LocationSearchResults {
-    
-    let locationSearchResults: [LocationSearchResult]
-    
-}
-
 struct LocationSearchResult {
     
     let title: String

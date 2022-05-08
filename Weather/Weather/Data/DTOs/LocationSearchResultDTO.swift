@@ -7,17 +7,6 @@
 
 import Foundation
 
-struct LocationSearchResultsDTOs: Decodable {
-    
-    let locationSearchResultsDTOs: [LocationSearchResultResponseDTO]
-
-    func convertToDomain() -> LocationSearchResults {
-        let transformedToDomain = self.locationSearchResultsDTOs.map( { $0.convertToDomain() } )
-        return .init(locationSearchResults: transformedToDomain)
-    }
-    
-}
-
 struct LocationSearchResultResponseDTO: Decodable {
     
     let title: String
