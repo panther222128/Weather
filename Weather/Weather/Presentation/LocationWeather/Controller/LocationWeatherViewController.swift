@@ -51,7 +51,9 @@ final class LocationWeatherViewController: UIViewController {
         self.locationWeatherViewModel.isError.bind { [weak self] isError in
             guard let self = self else { return }
             guard let error = self.locationWeatherViewModel.error.value else { return }
-            self.presentErrorAlert(of: error)
+            if isError {
+                self.presentErrorAlert(of: error)
+            }
         }
     }
     
