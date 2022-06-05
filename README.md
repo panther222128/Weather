@@ -1,6 +1,6 @@
 # MetaWeather
 
-**2022.06.05: MetaWeather API -> 404 Page Not Found**
+**2022.06.05: MetaWeather API -> 404 Page Not Found so please check API available using below link**
 
 <https://www.metaweather.com/>
 
