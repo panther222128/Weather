@@ -1,5 +1,9 @@
 # MetaWeather
 
+**2022.06.05: MetaWeather API -> 404 Page Not Found**
+
+<https://www.metaweather.com/>
+
 ## 1. Simulator (iPhone 13, iPhone 13 mini)
 
 <img src="https://user-images.githubusercontent.com/61342175/167299100-fad039d5-89f0-43db-9f0c-cb4e29e6fb63.gif" width = 250 align = center>  
